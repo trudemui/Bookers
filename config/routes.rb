@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :books
   get "books/top" => "books#top"
   root to: 'books#top'
+  get '/books/:id', to: 'books#show'
+  patch 'books/:id' => 'books#update', as: 'update_book'
 end
