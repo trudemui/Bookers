@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root to: 'books#top'
   get '/books/:id', to: 'books#show'
   patch 'books/:id' => 'books#update', as: 'update_book'
+  post 'books' => 'books#create'
 end
