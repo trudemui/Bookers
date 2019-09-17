@@ -2,15 +2,22 @@
 <p>Find me in app/views/books/edit.html.erb</p>
  -->
  <h1>Editing Book</h1>
+ <div class="edit_book">
  <%= form_for(@book) do |f| %>
- <h4>title</h4>
- <%= f.text_field :title %>
- <h4>body</h4>
- <%= f.text_area :body %>
- <div>
+ 	<div class="edit_title">
+ 	<h4>title</h4>
+ 	<%= f.text_field :title %>
+ 	</div>
+ 	<div class="edit_body">
+ 	<h4>body</h4>
+ 	<%= f.text_area :body %>
+	 </div>
+ 	<div class="update_book">
  	<%= f.submit 'Update Book' %>
- </div>
+ 	</div>
  <% end %>
+ </div>
+ 
  <%= link_to "show", book_path(@book) %>
-<span>|</span>
-<%= link_to "back", '/books' %>
+ |
+ <%= link_to "back", '/books' %>
