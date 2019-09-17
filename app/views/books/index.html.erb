@@ -29,11 +29,21 @@
 
 
 <h2>New book</h2>
+
 <%= form_for(@book) do |f| %>
+
+
 	<h4>Title</h4>
 	<%= f.text_field :title %>
+	<% if @book.errors.messages[:title].any? %>
+	<span class="error"><%= @book.errors.messages[:title][0] %>
+	</span>
+	<% end %>
 	<h4>Body</h4>
 	<%= f.text_area :body %>
+	<% if @book.errors.messages[:body].any? %>
+	<span class="error"><%= @book.errors.messages[:body][0] %></span>
+	<% end %>
 
 	<div>
 		<%= f.submit 'Create book' %>
